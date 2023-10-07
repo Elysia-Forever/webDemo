@@ -1,0 +1,36 @@
+<section>
+    <br> <br> <br>
+  <h2 style="text-align: center;font-weight: bolder;">Các sản phẩm của chúng tôi</h2>
+  <button type="button" class="btn btn-warning" ng-click = "all($event)">ALL</button>
+  <!-- <button type="button" class="btn btn-primary"ng-click = "ao($event)">Áo</button>
+  <button type="button" class="btn btn-success" ng-click = "quan($event)">Quần</button> -->
+
+  <button type="button" class="btn btn-primary"ng-repeat = "lsp in dsLoaiSP "ng-click = "loaiSP($event,lsp.tenLoai)">{{lsp.tenLoai}}</button>
+
+  <div class="container">
+    <div class="row hang">
+
+      <div
+        class="col-lg-3 col-md-4 col-sm-6"
+        style="margin-top: 30px"
+        ng-repeat="list in danhsachSP"
+      >
+        <a
+          href="#/shop/detail1/{{list.id}}"
+          style="text-decoration: none; color: black"
+        >
+          <div class="card h-100" style="width: 18rem">
+            <img src="/assets/{{list.image}}" class="card-img-top" alt=""/>
+            <div class="card-body">
+              <p class="roll card-text text-center">Tên sản phẩm : {{list.name}}</p>
+              <p class="card-text text-center">Giá($) :{{list.price}}</p>
+              <p class="card-text text-center">Loại sản phẩm :{{list.LoaiSP}}</p>
+            <a href="#giohang"><button type="button" class="btn btn-success center">Mua ngay</button></a> 
+            <a href="#giohang"> <button type="button" class="btn btn-warning center">Thêm vào giỏ</button></a> 
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

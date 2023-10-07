@@ -1,0 +1,58 @@
+<section>
+  <h3 style="text-align: center;margin-top: 30px;">Hang Sản phẩm</h3>
+
+
+  <br> <br>
+<div class="container">
+  <div class="row">
+
+    <div class="col-3">
+  <br> <br> <br> <br> <br>    <a href="#qlsp"><button type="button" class="btn btn-outline-info btn-lg">SẢN PHẨM</button></a>
+  <br> <br> <br> <br> <br>    <a href="#qlLoaisp"><button type="button" class="btn btn-outline-info btn-lg">Hãng sản phẩm</button></a>
+    </div>
+   
+    <div class="col-9">
+      <form >
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nhập tên"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          ng-model = "nhapDL.tenLoai"
+        />
+        <br> <br>
+        <button type="button" class="btn btn-dark" ng-click = "themLoaisp($event)">ADD</button>
+        <button type="button" class="btn btn-dark" ng-click = "suaLoaisp($event)">UPDATE</button>
+      </form>
+<!-- TABLE -->
+<br> <br> <br> <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Hãng sản phẩm</th>
+            <th scope="col">Function</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="x in loaispTable">
+            <td>{{x.id}}</td>
+            <td>{{x.tenLoai}}</td>
+            <td><a href="#" ng-click="xoaLoaisp($event,$index,x.id)"><button type="button" class="btn btn-secondary">X</button></a>
+              <a href="#" ng-click="selectLoaisp($event,$index,x.id)"><button type="button" class="btn btn-secondary">select</button></a>           
+            </td>
+       
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    
+  </div>
+
+</div>
+
+
+
+
+</section>

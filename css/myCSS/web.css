@@ -1,0 +1,137 @@
+body{
+  max-width: 3000px;
+
+}
+li {
+  list-style: none;
+  font-weight: bold;
+  background-color: white;  
+}
+.container-md{
+position: relative;
+}
+
+.home>a{
+    color: greenyellow;
+}
+
+.container-md .childmenu{
+
+  position: absolute;
+  top: 30px;
+  right: 120px;
+  display: none;
+  z-index: 1;
+}
+.container-md  li:hover .childmenu{
+display: block;
+}
+.container-md  li:hover li{
+background-color: beige;
+  }
+.container-md  li:hover .childmenu>li>a{
+   color: black;
+}
+.childmenu>li{
+  background-color: yellow;
+  width: 120px;
+  height: 30px;
+}
+.childmenu>li>a{
+  text-decoration: none;
+}
+header{
+
+margin-top: 3px;
+
+background-color: antiquewhite;
+}
+
+.logo-head li {
+
+ background-color:antiquewhite ; 
+}
+.header__cart{
+ margin-top: 5px;
+}
+.header__cart>li{
+  position: relative;
+ 
+}
+.header__cart>li>a{
+  margin-left: 20px;
+ 
+}
+.iconbt{
+  font-size:  25px;
+  color: black;
+}
+.header__cart li span {
+  position: absolute;
+  font-size: 15px;
+left: 45px;
+}
+.gia{
+  margin-left:30px ;
+  display: inline-block;
+  font-size: 20px;
+}
+.header__cart>li{
+  margin-left: 12px;
+  display: inline-block;
+}
+.header__cart>li:hover i{
+  color: aquamarine;
+}
+
+
+.slshow{
+  margin-top: 30px;
+ 
+}
+
+.danhsach{
+  margin-top: 80px;
+}
+.control{
+  text-align: center;
+}
+.control ul li{
+display: inline-block;
+font-size: 30px;
+font-weight: normal;
+margin-left: 100px;
+}
+.roll{
+  font-weight: bolder;
+}
+.danhsach>.container>.hang{
+  margin-top: 50px;
+}
+.banner{
+  margin-top: 70px;
+}
+
+.danhsachgancuoi{
+  margin-top: 70px;
+}
+.danhsachgancuoi_icon{
+  font-size: 20px;
+ color: rgba(42, 48, 53, 0.407);
+}
+.dsgancuoi_nd{
+  font-size: 18px;
+  color: #7D746F;
+}
+.dsgancuoi_nd p{
+  color: black;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+footer{
+  margin-top: 90px;
+}
+footer li {
+  background-color: rgb(200, 249, 233);
+}

@@ -1,0 +1,43 @@
+<section>
+    <div class="container">
+        <!-- <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Số lượng</th>
+                <th scope="col">IMG</th>
+                <th scope="col">Hãng</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{det.id}}</th>
+                <td>{{det.name}}</td>
+                <td>{{det.price}}</td>
+                <td> <img src="/assets/{{det.image}}"alt="" style="width: 30%;"></td>
+              </tr>
+            
+            </tbody>
+          </table> -->
+
+<div class="row" style="margin-top: 40px;background-color: rgb(224, 244, 244); width: 1320px;height: 500px;  ">
+<div class="col-2"></div>
+<div class="col-4"><img src="/assets/{{det.image}}"alt="" style="width: 400px;height: 400px; margin-top: 50px;"></div>
+<div class="col-4">
+<div style="text-align: center; margin-top: 50px;">
+  <div><h1 style="color: gray;font-weight: bolder;">{{det.name}}</h1></div>
+  <div><span style="font-size: 20px;font-weight: bold;">Hãng sản xuất : {{det.hang}}</span></div>
+  <div><span style="font-size: 20px;font-weight: bold;">Giá tiền : {{det.price}} $</span></div>
+  <div><span style="font-size: 20px;font-weight: bold;">Thể loại : {{det.LoaiSP == 'ao' ? "Áo" : "Quần"}} </span></div> 
+  <br> <br> <a href="#shop"><button type="button" class="btn btn-outline-danger"><i class="bi bi-arrow-left-square-fill"></i></button></a>
+
+</div>
+
+
+</div>
+<div class="col-2"></div>
+</div>
+
+    </div>
+</section>

@@ -1,0 +1,125 @@
+<section>
+  <h3 style="text-align: center;margin-top: 30px;">Sản phẩm</h3>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-3">  
+        <br> <br> <br> <br> <br> <br> <a href="#qlsp"><button type="button" class="btn btn-outline-info btn-lg">SẢN PHẨM</button></a> 
+        <br> <br> <br> <br> <br> <br> <a href="#qlLoaisp"><button type="button" class="btn btn-outline-info btn-lg">Hãng sản phẩm</button></a>
+      </div>
+<div class="col-9">
+
+    <form>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">ID</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nhập id"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          ng-model = "input_sp.id";
+        />
+      </div>
+      <br />
+      <br />
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Tên sản phẩm</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nhập tên"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          ng-model = "input_sp.name";
+        />
+      </div>
+      <br />
+      <br />
+      <div class="input-group mb-3">
+        <span class="input-group-text">Giá ($)</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Amount (to the nearest dollar)"
+          ng-model = "input_sp.price";
+        />
+        <span class="input-group-text">.00</span>
+      </div>
+
+      <br />
+      <br />
+      <h5>Loại sản phẩm :</h5>
+     <div>
+        <input type="radio" ng-model = "input_sp.LoaiSP" value = "ao">Áo 
+        <input type="radio" ng-model = "input_sp.LoaiSP" value = "quan">Quần
+     </div>
+      <br />
+      <br />
+      <br />
+      <span>Hãng sản phẩm </span>
+      <div>
+        <select class="form-select" aria-label="Default select example" ng-model = "input_sp.hang">
+          <option ng-repeat = "lsp in LoaiSP_input" value = "{{lsp.tenLoai}}">{{lsp.tenLoai}}</option>
+        </select>
+      </div>
+
+      <br />
+      <br />
+      <br />
+      <div>
+        <div class="input-group mb-3">
+          <input type="file" class="form-control" id="inputGroupFile01"/>
+        </div>
+      </div>
+      <br> <br>
+      <button type="button" class="btn btn-dark" ng-click = "themsp($event)">ADD</button>
+      <button type="button" class="btn btn-dark" ng-click = "suasp($event)">UPDATE</button>
+
+    </form>
+    <!-- Hết row -->  
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    
+</div>
+    <!--Sang table  -->
+
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Tên sản phẩm</th>
+        <th scope="col">Giá($)</th>
+        <th scope="col">Loại sản phẩm</th>
+        <th scope="col">Image</th>
+        <th scope="col">Hãng</th>
+        <th scope="col">Function</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="arr in spTable">
+        <td>{{arr.id}}</td>
+        <td>{{arr.name}}</td>
+        <td>{{arr.price}}</td>
+        <td>{{arr.LoaiSP}}</td>
+        <td>{{arr.image}}</td>
+        <td>{{arr.hang}}</td>
+        <td><a href="#" ng-click="xoasp($event,$index,arr.id)"><button type="button" class="btn btn-secondary">X</button></a></td>
+        <td><a href="#" ng-click="detailsp($event,arr.id,$index)"><button type="button" class="btn btn-secondary">DT</button></a></td>
+      
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Hết container -->
+</div> 
+</section>

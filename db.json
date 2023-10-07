@@ -1,0 +1,126 @@
+{
+  "Sanpham": [
+    {
+      "hang": "nikke",
+      "name": "Áo nam",
+      "price": 39,
+      "image": "ao1.jpg",
+      "LoaiSP": "ao",
+      "id": "1"
+    },
+    {
+      "hang": "adidas",
+      "name": "Áo nữ",
+      "price": 28,
+      "image": "ao2.jpg",
+      "LoaiSP": "ao",
+      "id": "2"
+    },
+    {
+      "hang": "eovi",
+      "name": "Áo dài tay",
+      "price": 21,
+      "image": "ao3.jpg",
+      "LoaiSP": "ao",
+      "id": "3"
+    },
+    {
+      "hang": "nikke",
+      "name": "Áo chơi",
+      "price": 34,
+      "image": "ao4.jpg",
+      "LoaiSP": "ao",
+      "id": "4"
+    },
+    {
+      "hang": "catche",
+      "name": "Quần cộc",
+      "price": 33,
+      "image": "quan1.jpg",
+      "LoaiSP": "quan",
+      "id": "5"
+    },
+    {
+      "hang": "doran",
+      "name": "Quần nữ",
+      "price": 26,
+      "image": "quan2.jpg",
+      "LoaiSP": "quan",
+      "id": "6"
+    },
+    {
+      "hang": "catche",
+      "name": "Quần nam",
+      "price": 88,
+      "image": "quan3.jpg",
+      "LoaiSP": "quan",
+      "id": "7"
+    },
+    {
+      "hang": "eovi",
+      "name": "Quần trẻ em",
+      "price": 91,
+      "image": "quan4.jpg",
+      "LoaiSP": "quan",
+      "id": "8"
+    },
+    {
+      "hang": "adidas",
+      "name": "Áo mạnh cho nam",
+      "price": "30",
+      "image": "1.jpg",
+      "LoaiSP": "ao",
+      "id": "10"
+    },
+    {
+      "hang": "nikke",
+      "name": "minh22",
+      "price": 1,
+      "image": "3.jpg",
+      "LoaiSP": "quan",
+      "id": "55"
+    },
+    {
+      "hang": "doran",
+      "name": "minh",
+      "price": 1,
+      "image": "1.jpg",
+      "LoaiSP": "quan",
+      "id": "890"
+    },
+    {
+      "hang": "hahaha",
+      "name": "abcc",
+      "price": "10",
+      "image": "4.jpg",
+      "LoaiSP": "ao",
+      "id": "45"
+    }
+  ],
+  "LoaiSanPham": [
+    {
+      "id": 1,
+      "tenLoai": "eovi"
+    },
+    {
+      "id": 2,
+      "tenLoai": "nikke"
+    },
+    {
+      "id": 3,
+      "tenLoai": "adidas"
+    },
+    {
+      "id": 4,
+      "tenLoai": "catche"
+    },
+    {
+      "tenLoai": "doran",
+      "id": 5
+    },
+    {
+      "tenLoai": "hahaha",
+      "id": 6
+    }
+  ]
+}
