@@ -1,2 +1,1 @@
-nhánh 2 vào nhánh 1
-aaaa
+TEST MERGE
