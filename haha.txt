@@ -1,6 +1,3 @@
-MERGE hahahhihi
-abc
-MERGE hahahhihi
-abc
-MERGE hahahhihi
-abc
+MERGE hahahhihiMERGE hahahhihiTEST MERGE
+testhaha 
+haha
