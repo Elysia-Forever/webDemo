@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <div class="text-center">
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        <i class="bi bi-qr-code"></i>
+      </button>
+    </div>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">QR Code Scanner</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="video-container">
+              <video id="videoElement" playsinline autoplay></video>
+              <canvas id="canvasElement" style="display: none"></canvas>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button id="scanQR" type="button" class="btn btn-primary">
+              Scan QR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jsqr -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const video = document.getElementById("videoElement");
+        const canvasElement = document.getElementById("canvasElement");
+        const canvas = canvasElement.getContext("2d");
+
+        // Code xử lý camera và quét mã QR giữ nguyên như trước
+
+        // Lắng nghe sự kiện khi modal được mở
+        document
+          .getElementById("exampleModal")
+          .addEventListener("show.bs.modal", function () {
+            // Khi modal được mở, hiển thị video từ camera
+            canvasElement.style.display = "none";
+            video.style.display = "block";
+
+            navigator.mediaDevices
+              .getUserMedia({ video: { facingMode: "environment" } })
+              .then(function (stream) {
+                video.srcObject = stream;
+                video.play();
+              })
+              .catch(function (err) {
+                console.error("Error accessing the camera: ", err);
+              });
+          });
+
+        // Lắng nghe sự kiện khi modal được đóng
+        document
+          .getElementById("exampleModal")
+          .addEventListener("hide.bs.modal", function () {
+            // Khi modal bị đóng, dừng video từ camera
+            if (video.srcObject) {
+              video.srcObject.getTracks().forEach(function (track) {
+                track.stop();
+              });
+            }
+          });
+
+        // Lắng nghe sự kiện khi người dùng click vào nút quét QR
+        document
+          .getElementById("scanQR")
+          .addEventListener("click", function () {
+            canvasElement.style.display = "block";
+            video.style.display = "none";
+            canvasElement.width = video.videoWidth;
+            canvasElement.height = video.videoHeight;
+            canvas.drawImage(
+              video,
+              0,
+              0,
+              canvasElement.width,
+              canvasElement.height
+            );
+
+            const imageData = canvas.getImageData(
+              0,
+              0,
+              canvasElement.width,
+              canvasElement.height
+            );
+            const code = jsQR(
+              imageData.data,
+              imageData.width,
+              imageData.height
+            );
+
+            if (code) {
+              alert("QR Code detected! Content: " + code.data);
+            } else {
+              alert("No QR Code detected!");
+            }
+          });
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
