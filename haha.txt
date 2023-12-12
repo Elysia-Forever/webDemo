@@ -1,4 +1,4 @@
 MERGE hahahhihiMERGE hahahhihiTEST MERGE
 testhaha 
 haha
-new acount
+delete account
