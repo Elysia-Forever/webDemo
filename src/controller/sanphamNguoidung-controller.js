@@ -10,7 +10,6 @@ window.SanphamCtrl = function ($scope, $http) {
     }
   });
 
-
   $http.get(LoaiSPAPI).then(function (response) {
     if (response.statusText == "OK") {
       $scope.dsLoaiSP = response.data;
@@ -34,7 +33,7 @@ window.SanphamCtrl = function ($scope, $http) {
     });
   };
 
-  //Quần 
+  //Quần
   $scope.quan = function (event) {
     event.preventDefault();
     let sp = SanphamAPI + "?LoaiSP=quan";
@@ -44,12 +43,11 @@ window.SanphamCtrl = function ($scope, $http) {
   };
 
   //Loai sp
-$scope.loaiSP = function (event,ten) {
-event.preventDefault();
-let loai = SanphamAPI + "?hang=" + ten;
-$http.get(loai).then(function (response) {
-  $scope.danhsachSP = response.data;
-});
-}
-  
+  $scope.loaiSP = function (event, ten) {
+    event.preventDefault();
+    let loai = SanphamAPI + "?hang=" + ten;
+    $http.get(loai).then(function (response) {
+      $scope.danhsachSP = response.data;
+    });
+  };
 };

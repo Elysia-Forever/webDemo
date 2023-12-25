@@ -17,6 +17,9 @@
   </head>
   <body>
     <div class="text-center">
+      <div>QR LABLE : <p id="qrLB"></p> </div> 
+      <div>QR Text : <input type="text" name="" id="qrText"></div> 
+      <br>
       <button
         type="button"
         class="btn btn-primary"
@@ -64,6 +67,7 @@
           </div>
         </div>
       </div>
+    
     </div>
 
     <!-- jsqr -->
@@ -136,7 +140,9 @@
             );
 
             if (code) {
-              alert("QR Code detected! Content: " + code.data);
+             document.getElementById('qrLB').innerHTML = code.data;
+             document.getElementById('qrText').value = code.data;
+             alert("NICE CODE");
             } else {
               alert("No QR Code detected!");
             }
